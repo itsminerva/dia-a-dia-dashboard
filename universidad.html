@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universidad | Dia a Dia</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="universidad.css" />
+</head>
+<body>
+  <main class="university-shell">
+    <header class="university-hero">
+      <div>
+        <a class="back-link" href="index.html">Volver al dashboard</a>
+        <p class="eyebrow">Espacio universitario</p>
+        <h1>Horario, estudio y descansos</h1>
+      </div>
+      <button class="primary-btn" id="universityNotifyBtn" type="button">Activar notificaciones</button>
+    </header>
+
+    <section class="study-room">
+      <div class="timer-card">
+        <span class="coffee-icon" aria-hidden="true">&#9749;</span>
+        <p class="card-label" id="timerMode">Pomodoro</p>
+        <strong id="timerDisplay">25:00</strong>
+        <div class="timer-actions">
+          <button class="primary-btn" id="startTimer" type="button">Iniciar</button>
+          <button class="soft-btn" id="pauseTimer" type="button">Pausar</button>
+          <button class="soft-btn" id="resetTimer" type="button">Reiniciar</button>
+        </div>
+        <div class="timer-settings">
+          <label>Estudio <input id="focusMinutes" type="number" min="1" max="120" value="25" /></label>
+          <label>Descanso <input id="breakMinutes" type="number" min="1" max="60" value="5" /></label>
+        </div>
+      </div>
+
+      <article class="panel study-notes">
+        <div class="panel-header">
+          <div>
+            <span class="card-label">Notas</span>
+            <h2>Apuntes rapidos</h2>
+          </div>
+        </div>
+        <textarea id="universityNotes" placeholder="Pendientes, ideas de clase, temas para estudiar..."></textarea>
+      </article>
+    </section>
+
+    <section class="university-grid">
+      <article class="panel schedule-panel">
+        <div class="panel-header">
+          <div>
+            <span class="card-label">Horario</span>
+            <h2>Clases de la semana</h2>
+          </div>
+        </div>
+
+        <form id="classForm" class="class-form" autocomplete="off">
+          <input id="className" placeholder="Materia" required />
+          <select id="classDay">
+            <option>Lunes</option>
+            <option>Martes</option>
+            <option>Miercoles</option>
+            <option>Jueves</option>
+            <option>Viernes</option>
+            <option>Sabado</option>
+          </select>
+          <input id="classTime" type="time" required />
+          <input id="classRoom" placeholder="Aula" />
+          <select id="classColor">
+            <option value="#f8cdd8">Rosa</option>
+            <option value="#cceadb">Menta</option>
+            <option value="#dcd3f6">Lila</option>
+            <option value="#f5e5ad">Amarillo</option>
+            <option value="#c9e7f4">Azul</option>
+          </select>
+          <button class="primary-btn" type="submit">Agregar</button>
+        </form>
+
+        <div id="scheduleGrid" class="schedule-grid"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <span class="card-label">Centro</span>
+            <h2>Notificaciones</h2>
+          </div>
+        </div>
+        <p class="helper-text" id="universityNotificationStatus">Las alertas suenan al terminar estudio o descanso.</p>
+        <ul id="universityNotifications" class="notification-list"></ul>
+      </article>
+    </section>
+  </main>
+
+  <script src="universidad.js"></script>
+</body>
+</html>

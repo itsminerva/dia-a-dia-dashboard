@@ -1,0 +1,162 @@
+.university-shell {
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.university-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.study-room {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.15fr) minmax(280px, 0.85fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.timer-card {
+  display: grid;
+  place-items: center;
+  min-height: 520px;
+  padding: 34px;
+  border: 1px solid rgba(236, 230, 238, 0.92);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.9), rgba(255,247,223,0.86)),
+    radial-gradient(circle at 75% 20%, rgba(248,205,216,0.45), transparent 34%);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.coffee-icon {
+  display: grid;
+  place-items: center;
+  width: 98px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--line);
+  font-size: 3rem;
+}
+
+#timerDisplay {
+  font-size: clamp(4rem, 12vw, 9rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.timer-actions,
+.timer-settings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.timer-settings label {
+  display: grid;
+  gap: 6px;
+  min-width: 130px;
+  color: var(--muted);
+}
+
+.study-notes textarea {
+  min-height: 420px;
+}
+
+.university-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 16px;
+}
+
+.class-form {
+  display: grid;
+  grid-template-columns: minmax(150px, 1.4fr) 130px 110px minmax(90px, 0.8fr) 110px auto;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(130px, 1fr));
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.schedule-day {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 210px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.schedule-day h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.class-card {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--class-color, var(--rose));
+}
+
+.class-card span {
+  color: rgba(47, 52, 64, 0.74);
+  font-size: 0.82rem;
+}
+
+.class-card button {
+  justify-self: start;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.7);
+  color: #9c3939;
+  padding: 5px 8px;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .study-room,
+  .university-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .class-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .university-shell {
+    padding: 18px;
+  }
+
+  .university-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .class-form {
+    grid-template-columns: 1fr;
+  }
+}
